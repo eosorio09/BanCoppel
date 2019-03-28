@@ -1,0 +1,18 @@
+---
+- name: UPLOAD PROCESS
+  hosts: 127.0.0.1
+  remote_user: root
+  roles:
+    - role: sshpassUploadProxy-master.tar
+      v_usr: usuario1
+      v_pass: 123456789
+      v_server: 192.168.1.156
+      upload_this_file: /tmp/sftp/documento.txt.gpg
+      v_remotePath: home/
+      v_localPath: /tmp/
+      proxy: 192.168.122.106
+      puerto: 8080
+
+  tasks:
+  - name: Eliminando archivos del directorio sftp
+    shell: rm -f /tmp/sftp/*
