@@ -1,5 +1,5 @@
 - name: Copiar archivos con scp
-- hosts: all
+  hosts: all
   tasks:
   - name: Copiar archivos con scp
     shell: scp root@192.168.1.31:/tmp/sftp/*.gpg /tmp/sftp/
