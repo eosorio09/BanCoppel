@@ -1,5 +1,5 @@
 - name: Encriptar con GPG
-  hosts: 192.168.1.31
+  hosts: all
   tasks:
   - name: Encriptar paquete
     shell: cat /tmp/password | gpg --batch -c --passphrase-fd 0 /tmp/sftp/documento.txt
