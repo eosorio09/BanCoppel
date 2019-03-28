@@ -1,6 +1,5 @@
----
 - name: Eliminando archivos del directorio sftp
   hosts: 192.168.1.31
-  remote_user: root
   tasks:
-  shell: rm -f /tmp/sftp/*
+  - name: Eliminando archivos del directorio sftp
+    shell: rm -f /tmp/sftp/*
