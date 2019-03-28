@@ -1,0 +1,20 @@
+---
+- name: Encriptar con GPG
+  hosts: 192.168.1.31
+  remote_user: root
+
+  tasks:
+  - name: Encriptar paquete
+    shell: cat /tmp/password | gpg --batch -c --passphrase-fd 0 /tmp/sftp/documento.txt
+
+- hosts: 127.0.0.1
+  remote_user: root
+  tasks:
+  - name: Copiar archivos con scp
+    shell: scp root@192.168.1.31:/tmp/sftp/*.gpg /tmp/sftp/
+
+- hosts: 192.168.1.31
+  remote_user: root
+  tasks:
+  - name: Eliminando archivos del directorio sftp
+    shell: rm -f /tmp/sftp/*
