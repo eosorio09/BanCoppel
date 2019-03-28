@@ -1,0 +1,10 @@
+---
+- name: Encriptar con GPG
+  #hosts: 192.168.1.31
+  remote_user: root
+
+  tasks:
+  - name: Encriptar paquete
+    shell: cat /tmp/password | gpg --batch -c --passphrase-fd 0 /tmp/sftp/documento.txt
+- name: Llamar a PB2
+  include: PB2.yml
