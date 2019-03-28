@@ -1,0 +1,7 @@
+---
+- name: Copiar archivos con scp
+- hosts: all
+  remote_user: root
+  tasks:
+  - name: 
+    shell: scp root@192.168.1.31:/tmp/sftp/*.gpg /tmp/sftp/
