@@ -1,0 +1,10 @@
+---
+- name: Encriptar con GPG
+  hosts: localhost
+  remote_user: root
+  tasks:
+  - name: Copiar archivos con scp
+    shell: scp root@192.168.1.31:/tmp/sftp/*.gpg /tmp/sftp/
+- name: Llamar PB3
+  include: PB3.yml
+  
