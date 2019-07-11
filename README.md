@@ -1,2 +1,2 @@
-# BanCoppel
+# 
 Playbooks para BanCoppel
